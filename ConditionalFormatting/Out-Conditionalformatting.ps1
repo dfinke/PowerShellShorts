@@ -1,5 +1,7 @@
 function Out-Conditionalformatting {
     <#
+        .SYNOPSIS
+            Colorize your PowerShell data output the way you want
         .EXAMPLE
         $data = ((Get-Process).Where({ $_.Company }) | Select-Object Company, Name, Handles, NPM, PM -First 15)
         Out-Conditionalformatting $data {
