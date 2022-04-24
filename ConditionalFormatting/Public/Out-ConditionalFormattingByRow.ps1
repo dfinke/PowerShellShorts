@@ -1,10 +1,10 @@
-function Out-Conditionalformatting {
+function Out-ConditionalFormattingByRow {
     <#
         .SYNOPSIS
         Colorize your PowerShell data output the way you want
         .EXAMPLE
         $data = ((Get-Process).Where({ $_.Company }) | Select-Object Company, Name, Handles, NPM, PM -First 15)
-        Out-Conditionalformatting $data {
+        Out-ConditionalFormattingByRow $data {
             if ($item.Handles -ge 500) {
                 $PSStyle.Background.Green
             }

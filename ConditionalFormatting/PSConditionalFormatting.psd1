@@ -26,7 +26,7 @@
 
     # Functions to export from this module
     FunctionsToExport  = @(
-        'Out-Conditionalformatting'
+        'Out-ConditionalFormattingByRow'
     )
 
     # Aliases to export from this module
