@@ -50,7 +50,8 @@ function Out-Conditionalformatting {
                 continue
             }
 
-            $map[$row] + ' ' + $item + $psstyle.Reset
+            # $map[$row] + ' ' + $item + $psstyle.Reset
+            $map[$row] + $item + $psstyle.Reset
         }
     }
 }

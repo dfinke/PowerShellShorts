@@ -1,4 +1,4 @@
-. .\spikeColumnColors.ps1
+. $PSScriptRoot\..\Spikes\spikeColumnColors.ps1
 
 $data = ConvertFrom-Csv @"
 A,B,C,D
@@ -11,7 +11,7 @@ A,B,C,D
 
 $blueAndRed = {
     param($targetData)
-    # $color = $PSStyle.Reverse
+    
     $color = $PSStyle.Background.Blue
     if ([int]$targetData -lt 6) {
         $color = $PSStyle.Background.Red
@@ -19,14 +19,6 @@ $blueAndRed = {
     $color
 }
 
-function test {
-    param($targetData)
-    $color = $PSStyle.Reverse
-    if ([int]$targetData -lt 6) {
-        $color = $PSStyle.Background.Green
-    }
-    $color
-}
 
 ''
 doColumnStyles $data @{
@@ -40,6 +32,5 @@ doColumnStyles $data @{
     # A = $blueAndRed
     B = $blueAndRed
     C = $blueAndRed 
-    #D = (Get-Command test)
     # D = $blueAndRed
 }
