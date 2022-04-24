@@ -1,6 +1,8 @@
-''
 function doColumnStyles {
-    param($data, $styles)
+    param(
+        $data, 
+        [System.Collections.IDictionary]$styles
+    )
     
     $mapMaxLength = @{}
     $names = $data[0].psobject.Properties.Name
@@ -41,7 +43,7 @@ function doColumnStyles {
             }
             else {
                 # (&$style) + ($item.$name.ToString()).padRight($pad + 1) + $PSStyle.Reset
-                (&$style) + ($item.$name.ToString()).padRight($pad + $offset) + $PSStyle.Reset
+                (&$style $item.$name) + ($item.$name.ToString()).padRight($pad + $offset) + $PSStyle.Reset
             }
         }
             
