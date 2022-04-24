@@ -37,7 +37,7 @@ function Out-Conditionalformatting {
         for ($idx = 0; $idx -lt $data.Count; $idx++) {
             $item = $data[$idx]
             $row = $idx + $offset
-            $map[$row] = &$sb 
+            $map[$row] = &$sb $item
         }    
     
         $dataset = ($data | Format-Table | Out-String).split("`r`n")
