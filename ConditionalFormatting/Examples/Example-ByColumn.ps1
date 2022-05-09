@@ -1,4 +1,6 @@
-. $PSScriptRoot\..\Spikes\spikeColumnColors.ps1
+# . $PSScriptRoot\..\Spikes\spikeColumnColors.ps1
+
+Import-Module $PSScriptRoot\..\PSConditionalFormatting.psd1 -Force
 
 $data = ConvertFrom-Csv @"
 A,B,C,D
@@ -19,16 +21,16 @@ $blueAndRed = {
     $color
 }
 
-
 ''
-doColumnStyles $data @{
+$data | Out-ConditionalFormattingByColumn @{
     # A = { $PSStyle.Background.Green }  
     B = { $PSStyle.Background.Yellow } 
     C = { $PSStyle.Background.Yellow } 
     # D = { $PSStyle.Background.Green }
 }
+
 ''
-doColumnStyles $data @{
+$data | Out-ConditionalFormattingByColumn @{
     # A = $blueAndRed
     B = $blueAndRed
     C = $blueAndRed 

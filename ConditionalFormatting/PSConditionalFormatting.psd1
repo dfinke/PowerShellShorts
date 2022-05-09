@@ -26,7 +26,10 @@
 
     # Functions to export from this module
     FunctionsToExport  = @(
-        'Out-ConditionalFormattingByRow'
+        'Out-ConditionalFormattingByColumn',
+        'Out-ConditionalFormattingByRow',
+        'Out-HighlightMax',
+        'Out-HighlightMin'        
     )
 
     # Aliases to export from this module

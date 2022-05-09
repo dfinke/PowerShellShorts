@@ -1,4 +1,5 @@
-. .\spikeMinMax.ps1
+# . .\spikeMinMax.ps1
+Import-Module $PSScriptRoot\..\PSConditionalFormatting.psd1 -Force
 
 $data = ConvertFrom-Csv @"
 Region,State,Units,Price
